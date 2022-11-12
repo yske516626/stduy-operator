@@ -1,0 +1,20 @@
+#include<stdio.h>
+int main(void)
+{
+	int arr[5] = { 1,2,3,4,5 };
+	int(*p)[5] = &arr;
+	//这里的p是是整个数组的地址，指向五个元素，*p = arr  --整体
+	int* pa = arr;
+	//这里的pa指数组首元素地址，其实就是pa = arr
+	printf("%d\n", (*p)[1]);
+	printf("%d\n", arr[1]);
+	//*p = arr >> *p[1] = arr[1]
+	printf("%d\n", *(*p + 1));
+	printf("%d\n", *(arr + 1));
+	//*p其实就是数组名arr
+	
+	printf("%d %d\n", *arr,arr[1]);
+	printf("%d %d\n", *pa,pa[1]);
+	//pa = arr没有加&，指首元素地址，即pa = arr
+	return 0;
+}
