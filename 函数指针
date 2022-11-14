@@ -1,0 +1,17 @@
+#include<stdio.h>
+int add(int x, int y)
+{
+	return x + y;
+}
+int main(void)
+{
+	int a = 0;
+	int b = 0;
+	int (*pa)(int, int) = add;
+	printf("%d\n", pa(2, 4));
+	printf("%d\n", add(2, 4));
+
+	printf("%d\n", (*pa)(2, 4));
+	//*可有可无，因此函数名其实本身就是个地址
+	return 0;
+}
