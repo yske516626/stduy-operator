@@ -1,0 +1,107 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<windows.h>
+void menu()
+{
+printf("1.add    2.sub\n");
+printf("3.mul    4.div\n");
+printf("    0.exit   \n");
+}
+double add(double x,double y)
+{
+return x + y;
+}
+double sub(double x, double y)
+{
+return x - y;
+}
+double mul(double x, double y)
+{
+return x * y;
+}
+double div(double x, double y)
+{
+return x / y;
+}
+int main(void)
+{
+double x = 0;
+double y = 0;
+int input = 1;
+double ret = 0;
+double (*pa[5])(double x, double y) = { 0,add,sub,mul,div };
+while (input)
+{
+menu();
+printf("input :");
+scanf("%d", &input);
+if (input >= 1 && input <= 4)
+{
+printf("请输入要计算的两个操作数：");
+scanf("%lf%lf", &x, &y);
+ret = pa[input](x, y);
+//(*p)input，*可加可不加，数组元素所代表函数名本身就是个地址
+printf("ret = %lf\n", ret);
+}
+else
+{
+printf("输入错误\n");
+}
+Sleep(3000);
+system("cls");
+}
+return 0;
+}#include<stdio.h>
+#include<stdlib.h>
+#include<windows.h>
+void menu()
+{
+printf("1.add    2.sub\n");
+printf("3.mul    4.div\n");
+printf("    0.exit   \n");
+}
+double add(double x,double y)
+{
+return x + y;
+}
+double sub(double x, double y)
+{
+return x - y;
+}
+double mul(double x, double y)
+{
+return x * y;
+}
+double div(double x, double y)
+{
+return x / y;
+}
+int main(void)
+{
+double x = 0;
+double y = 0;
+int input = 1;
+double ret = 0;
+double (*pa[5])(double x, double y) = { 0,add,sub,mul,div };
+while (input)
+{
+menu();
+printf("input :");
+scanf("%d", &input);
+if (input >= 1 && input <= 4)
+{
+printf("请输入要计算的两个操作数：");
+scanf("%lf%lf", &x, &y);
+ret = pa[input](x, y);
+//(*p)[input]，*可加可不加，数组元素所代表函数名本身就是个地址
+printf("ret = %lf\n", ret);
+}
+else
+{
+printf("输入错误\n");
+}
+Sleep(3000);
+system("cls");
+}
+return 0;
+}
